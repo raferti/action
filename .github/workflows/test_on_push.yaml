@@ -25,6 +25,6 @@ jobs:
       - name: Run migrations
         run: python manage.py migrate
       - name: Run tests
-        run: coverage run quiz/tests.py
+        run: coverage run --source='.' manage.py test quiz
       - name: Tests report
         run: coverage report

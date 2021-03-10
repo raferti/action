@@ -13,7 +13,7 @@ class QuizListTest(TestCase):
         self.answer = Answer.objects.create(text='Да', is_correct=True, question=self.question)
 
     def test_uses_blog_list_template(self):
-        """Тест: страница использует шаблон.   """
+        """Тест: страница использует шаблон.     """
         response = self.client.get('/')
         self.assertTrue(response.status_code, 200)
         self.assertTemplateUsed(response, 'quiz/quiz_list.html')

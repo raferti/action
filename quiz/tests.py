@@ -5,6 +5,7 @@ from quiz.models import Quiz, Question, Answer
 
 
 class QuizListTest(TestCase):
+
     def setUp(self):
         self.user = User.objects.create_user('user1', 'mail@mail.ru', '123')
         self.quiz = Quiz.objects.create(name='Опрос 1', user=self.user)

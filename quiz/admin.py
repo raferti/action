@@ -1,3 +1,19 @@
 from django.contrib import admin
 
-# Register your models here.
+from quiz.models import Quiz, Question, Answer
+
+
+@admin.register(Quiz)
+class AdminQuiz(admin.ModelAdmin):
+    fields = ('name', 'user')
+
+
+@admin.register(Question)
+class AdminQuestion(admin.ModelAdmin):
+    fields = ('text', 'quiz')
+
+
+@admin.register(Answer)
+class AdminAnswer(admin.ModelAdmin):
+    fields = ('text', 'is_correct', 'question')
+

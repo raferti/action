@@ -1,0 +1,30 @@
+name: Run tests on any Push event
+on:
+ push:
+   tags:
+     - '!refs/tags/*'
+   branches:
+     - '*'
+
+jobs:
+  run_tests:
+    runs-on: [ubuntu-latest]
+    env:
+      DJANGO_SETTINGS_MODULE: config.settings
+    steps:
+      # Чекаутим код
+      - uses: actions/checkout@master
+      # Устанавливаем python нужной версии
+      - uses: actions/setup-python@v1
+        with:
+          python-version: '3.8'
+          architecture: 'x64'
+      - name: Install requirements
+        # Устанавливаем зависимости
+        run: pip install -r requirements.txt
+      - name: Run migrations
+        run: python manage.py migrate
+      - name: Run tests
+        run: coverage run --source='.' manage.py test quiz
+      - name: Tests report
+        run: coverage report

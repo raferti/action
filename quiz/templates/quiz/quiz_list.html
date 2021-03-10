@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}Список викторин{% endblock %}
+
+{% block content %}
+    {% for quiz in quizzes %}
+        {{ quiz }}
+    {% endfor %}
+{% endblock %}

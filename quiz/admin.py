@@ -10,7 +10,7 @@ class AdminQuiz(admin.ModelAdmin):
 
 @admin.register(Question)
 class AdminQuestion(admin.ModelAdmin):
-    fields = ('text',)
+    fields = ('text', 'quiz')
 
 
 @admin.register(Answer)

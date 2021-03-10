@@ -3,7 +3,7 @@ from django.db import models
 
 
 class Quiz(models.Model):
-    """Тест"""
+    """Тест."""
     name = models.CharField('Имя', max_length=70)
     update_at = models.DateTimeField('Обновленно', auto_now=True)
     create_at = models.DateTimeField('Созданно', auto_now_add=True)
@@ -18,7 +18,7 @@ class Quiz(models.Model):
 
 
 class Question(models.Model):
-    """Вопросы теста"""
+    """Вопросы теста."""
     text = models.CharField('Вопрос', max_length=250)
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, related_name='questions')
 
@@ -31,7 +31,7 @@ class Question(models.Model):
 
 
 class Answer(models.Model):
-    """Ответы на вопросы"""
+    """Ответы на вопросы."""
     text = models.CharField('Ответ', max_length=250)
     is_correct = models.BooleanField(default=False)
     question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='answers')

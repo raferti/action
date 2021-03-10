@@ -22,6 +22,8 @@ jobs:
       - name: Install requirements
         # Устанавливаем зависимости
         run: pip install -r requirements.txt
+      - name: Run migrations
+        run: python manage.py migrate
       - name: Run tests
         run: coverage run quiz/tests.py
       - name: Tests report

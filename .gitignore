@@ -8,7 +8,7 @@ venv
 
 prod_settings.py
 local_settings.py
-
+.coverage
 
 __pycache__/
 */__pycache__/

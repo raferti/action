@@ -9,7 +9,7 @@ SECRET_KEY = 'j&y-$hv1@809b#_y6lven6_x5t43y4sx3&3qhsh(1n3$i=gi=^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", "locahost"]
 
 
 INSTALLED_APPS = [
